@@ -215,9 +215,14 @@ const startDaemon = async () => {
     },
   });
   let child;
+  const activeNetowrk = 'beta';
+  const cmd = path.join(
+    global.resourcesPath,
+    activeNetowrk,
+    toExecutableName('btcb_node'),
+  );
   if (process.platform === 'win32') {
     // eslint-disable-next-line global-require
-    const cmd = path.join(global.resourcesPath, toExecutableName('btcb_node'));
     log.info('Starting node:', cmd);
 
     child = crossSpawn(cmd, ['--daemon', '--data_path', dataPath], {
@@ -226,10 +231,6 @@ const startDaemon = async () => {
       stdio: ['ignore', 'pipe', 'pipe'],
     });
   } else {
-    const cmd = path.join(
-      global.resourcesPath,
-      toExecutableName('btcb_node'),
-    );
     log.info('Starting node:', cmd);
 
     child = crossSpawn(cmd, ['--daemon', '--data_path', dataPath], {
