@@ -145,43 +145,43 @@ const startDaemon = async () => {
 
     const serverCertPath = path.join(tlsPath, 'server.cert.pem');
     const serverKeyPath = path.join(tlsPath, 'server.key.pem');
-    const serverPems = generateCert('nanowalletcompany.com');
-    const dhparam = await fs.readFileAsync(
-      path.join(__dirname, 'tls', 'dhparam.pem'),
-    );
-    await writeFileAtomic(serverCertPath, normalizeNewline(serverPems.cert), {
-      mode: 0o600,
-    });
-    await writeFileAtomic(serverKeyPath, normalizeNewline(serverPems.private), {
-      mode: 0o600,
-    });
-    await writeFileAtomic(dhparamPath, normalizeNewline(dhparam), {
-      mode: 0o600,
-    });
+    // const serverPems = generateCert('nanowalletcompany.com');
+    // const dhparam = await fs.readFileAsync(
+    //   path.join(__dirname, 'tls', 'dhparam.pem'),
+    // );
+    // await writeFileAtomic(serverCertPath, normalizeNewline(serverPems.cert), {
+    //   mode: 0o600,
+    // });
+    // await writeFileAtomic(serverKeyPath, normalizeNewline(serverPems.private), {
+    //   mode: 0o600,
+    // });
+    // await writeFileAtomic(dhparamPath, normalizeNewline(dhparam), {
+    //   mode: 0o600,
+    // });
 
-    const clientCertPath = path.join(clientsPath, 'rpcuser1.cert.pem');
-    const clientKeyPath = path.join(clientsPath, 'rpcuser1.key.pem');
-    const clientPems = generateCert('desktop.nanowalletcompany.com');
-    await writeFileAtomic(clientCertPath, normalizeNewline(clientPems.cert), {
-      mode: 0o600,
-    });
-    await writeFileAtomic(clientKeyPath, normalizeNewline(clientPems.private), {
-      mode: 0o600,
-    });
+    // const clientCertPath = path.join(clientsPath, 'rpcuser1.cert.pem');
+    // const clientKeyPath = path.join(clientsPath, 'rpcuser1.key.pem');
+    // const clientPems = generateCert('desktop.nanowalletcompany.com');
+    // await writeFileAtomic(clientCertPath, normalizeNewline(clientPems.cert), {
+    //   mode: 0o600,
+    // });
+    // await writeFileAtomic(clientKeyPath, normalizeNewline(clientPems.private), {
+    //   mode: 0o600,
+    // });
 
-    const subjectHash = '3634213b'; // openssl x509 -noout -subject_hash -in rpcuser1.cert.pem
-    const subjectHashPath = path.join(clientsPath, `${subjectHash}.0`);
-    await cpFile(clientCertPath, subjectHashPath);
-
+    // const subjectHash = '3634213b'; // openssl x509 -noout -subject_hash -in rpcuser1.cert.pem
+    // const subjectHashPath = path.join(clientsPath, `${subjectHash}.0`);
+    // await cpFile(clientCertPath, subjectHashPath);
+    //
     // https://github.com/cryptocode/notes/wiki/RPC-TLS
     config.rpc.secure = {
       enable: false,
       verbose_logging: is.development,
-      server_cert_path: serverCertPath,
-      server_key_path: serverKeyPath,
-      server_key_passphrase: '',
-      server_dh_path: dhparamPath,
-      client_certs_path: clientsPath,
+      // server_cert_path: serverCertPath,
+      // server_key_path: serverKeyPath,
+      // server_key_passphrase: '',
+      // server_dh_path: dhparamPath,
+      // client_certs_path: clientsPath,
     };
   }
 
@@ -229,6 +229,8 @@ const startDaemon = async () => {
       windowsHide: true,
       stdio: ['ignore', 'pipe', 'pipe'],
     });
+    log.info('DBG003');
+
   } else {
     log.info('Starting node:', cmd);
 
