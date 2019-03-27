@@ -13648,16 +13648,6 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-lzma-native@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/lzma-native/-/lzma-native-4.0.3.tgz#564d14727391e4f0ac239989e7616b1c1df80e4e"
-  integrity sha512-cSdO+I2z/jUcMIlCicePj4V/LbRtLDp4y1GerpLMaEo9NgfeNraX1Z4d9qk4yaBfYG1AtFTbi133kWgXOYKXXg==
-  dependencies:
-    nan "^2.10.0"
-    node-pre-gyp "^0.11.0"
-    readable-stream "^2.3.5"
-    rimraf "^2.6.1"
-
 macos-alias@~0.2.5:
   version "0.2.11"
   resolved "https://registry.yarnpkg.com/macos-alias/-/macos-alias-0.2.11.tgz#feeea6c13ba119814a43fc43c470b31e59ef718a"
@@ -14370,7 +14360,7 @@ najax@^1.0.3:
     lodash.defaultsdeep "^4.6.0"
     qs "^6.2.0"
 
-nan@^2.10.0, nan@^2.11.0, nan@^2.3.2, nan@^2.4.0, nan@^2.9.2:
+nan@^2.11.0, nan@^2.3.2, nan@^2.4.0, nan@^2.9.2:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
   integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
@@ -14607,22 +14597,6 @@ node-pre-gyp@^0.10.0:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.10.3.tgz#3070040716afdc778747b61b6887bf78880b80fc"
   integrity sha512-d1xFs+C/IPS8Id0qPTZ4bUT8wWryfR/OzzAFxweG+uLN85oPzyo2Iw6bVlLQ/JOdgNonXLCoRyqDzDWq4iw72A==
-  dependencies:
-    detect-libc "^1.0.2"
-    mkdirp "^0.5.1"
-    needle "^2.2.1"
-    nopt "^4.0.1"
-    npm-packlist "^1.1.6"
-    npmlog "^4.0.2"
-    rc "^1.2.7"
-    rimraf "^2.6.1"
-    semver "^5.3.0"
-    tar "^4"
-
-node-pre-gyp@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.11.0.tgz#db1f33215272f692cd38f03238e3e9b47c5dd054"
-  integrity sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"

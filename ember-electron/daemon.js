@@ -215,12 +215,11 @@ const startDaemon = async () => {
     },
   });
   let child;
-  const activeNetowrk = 'beta';
-  const cmd = path.join(
-    global.resourcesPath,
-    activeNetowrk,
-    toExecutableName('btcb_node'),
-  );
+ const cmd = path.join(
+      global.resourcesPath,
+      toExecutableName('btcb_node'),
+    );
+    log.info('Starting node:', cmd);
   if (process.platform === 'win32') {
     // eslint-disable-next-line global-require
     log.info('Starting node:', cmd);
