@@ -5,9 +5,9 @@ const path = require('path');
 const spdy = require('spdy');
 const cors = require('cors');
 const helmet = require('helmet');
-const cpFile = require('cp-file');
+// const cpFile = require('cp-file');
 const connect = require('connect');
-const getPort = require('get-port');
+// const getPort = require('get-port');
 const makeDir = require('make-dir');
 const username = require('username');
 const waitPort = require('wait-port');
@@ -24,7 +24,7 @@ const normalizeNewline = require('normalize-newline');
 const toExecutableName = require('to-executable-name');
 
 const Promise = require('bluebird');
-const writeFileAtomic = Promise.promisify(require('write-file-atomic'));
+// const writeFileAtomic = Promise.promisify(require('write-file-atomic'));
 const jsonwebtoken = Promise.promisifyAll(require('jsonwebtoken'));
 const fs = Promise.promisifyAll(require('graceful-fs'), {
   filter(name) {
@@ -135,7 +135,7 @@ const startDaemon = async () => {
   }
 
   const tlsPath = path.join(dataPath, 'tls');
-  const dhparamPath = path.join(tlsPath, 'dhparam.pem');
+  // const dhparamPath = path.join(tlsPath, 'dhparam.pem');
 
   if (!config.rpc.secure) {
     log.info('Generating secure node RPC configuration...');
@@ -143,8 +143,8 @@ const startDaemon = async () => {
     const clientsPath = path.join(tlsPath, 'clients');
     await makeDir(clientsPath, { fs });
 
-    const serverCertPath = path.join(tlsPath, 'server.cert.pem');
-    const serverKeyPath = path.join(tlsPath, 'server.key.pem');
+    // const serverCertPath = path.join(tlsPath, 'server.cert.pem');
+    // const serverKeyPath = path.join(tlsPath, 'server.key.pem');
     // const serverPems = generateCert('nanowalletcompany.com');
     // const dhparam = await fs.readFileAsync(
     //   path.join(__dirname, 'tls', 'dhparam.pem'),
@@ -215,11 +215,11 @@ const startDaemon = async () => {
     },
   });
   let child;
- const cmd = path.join(
-      global.resourcesPath,
-      toExecutableName('btcb_node'),
-    );
-    log.info('Starting node:', cmd);
+  const cmd = path.join(
+    global.resourcesPath,
+    toExecutableName('btcb_node'),
+  );
+  log.info('Starting node:', cmd);
   if (process.platform === 'win32') {
     // eslint-disable-next-line global-require
     log.info('Starting node:', cmd);
@@ -230,7 +230,6 @@ const startDaemon = async () => {
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     log.info('DBG003');
-
   } else {
     log.info('Starting node:', cmd);
 
@@ -278,7 +277,7 @@ const startDaemon = async () => {
   app.once('will-quit', killHandler);
   child.once('exit', () => app.removeListener('will-quit', killHandler));
 
-  const { client_certs_path: clientCertsPath } = config.rpc.secure;
+  // const { client_certs_path: clientCertsPath } = config.rpc.secure;
   // const cert = await fs.readFileAsync(
   //   path.join(clientCertsPath, 'rpcuser1.cert.pem'),
   // );
