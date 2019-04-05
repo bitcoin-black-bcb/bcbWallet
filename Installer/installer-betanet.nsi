@@ -1,7 +1,7 @@
 
 !define APPNAME "BCB Betanet Wallet"
 !define COMPANYNAME "Bitcoin Black"
-!define DESCRIPTION "BCB Betanet Wallet by Bitcoin Black"
+!define DESCRIPTION "BCB Betanet Wallet"
 # These three must be integers
 !define VERSIONMAJOR 1
 !define VERSIONMINOR 1
@@ -51,7 +51,7 @@ section "install"
 	# Files for the install directory - to build the installer, these should be in the same directory as the install script (this file)
 	setOutPath $INSTDIR
 	# Files added here should be removed by the uninstaller (see section "uninstall")
-	file /r "BCB Wallet App\*"
+	file /r "betanet\*"
     
 	# Add any other files for the install directory (license files, app data, etc) here
  
@@ -60,11 +60,11 @@ section "install"
  
 	# Start Menu
 	createDirectory "$SMPROGRAMS\${COMPANYNAME}"
-	createShortCut "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk" "$INSTDIR\bcb-wallet-app.exe" "" "$INSTDIR\logo.ico"
-    createShortCut "$DESKTOP\${APPNAME}.lnk" "$INSTDIR\bcb-wallet-app.exe" "" "$INSTDIR\logo.ico"
+	createShortCut "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk" "$INSTDIR\Bitcoin-Black-Wallet.exe" "" "$INSTDIR\logo.ico"
+    createShortCut "$DESKTOP\${APPNAME}.lnk" "$INSTDIR\Bitcoin-Black-Wallet.exe" "" "$INSTDIR\logo.ico"
     
     # Launch app
-    Exec "$INSTDIR\bcb-wallet-app.exe"
+    Exec "$INSTDIR\Bitcoin-Black-Wallet.exe"
 
 	# Registry information for add/remove programs
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}" "DisplayName" "${APPNAME}"
