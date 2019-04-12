@@ -60,7 +60,7 @@ section "install"
  
 	# Start Menu
 	createDirectory "$SMPROGRAMS\${COMPANYNAME}"
-	createShortCut "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk" "$INSTDIR\Bitcoin-Black-Wallet.exe" "" "$INSTDIR\logo.ico"
+	createShortCut "$SMPROGRAMS\${APPNAME}.lnk" "$INSTDIR\Bitcoin-Black-Wallet.exe" "" "$INSTDIR\logo.ico"
     createShortCut "$DESKTOP\${APPNAME}.lnk" "$INSTDIR\Bitcoin-Black-Wallet.exe" "" "$INSTDIR\logo.ico"
     
     # Launch app
@@ -101,11 +101,8 @@ functionEnd
 section "uninstall"
  
 	# Remove Start Menu launcher
-	delete "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk"
+	delete "$SMPROGRAMS\${APPNAME}.lnk"
 	delete "$DESKTOP\${APPNAME}.lnk"
-
-	# Try to remove the Start Menu folder - this will only happen if it is empty
-	rmDir /r "$SMPROGRAMS\${COMPANYNAME}"
  
 	# Remove files
 	delete $INSTDIR\*
