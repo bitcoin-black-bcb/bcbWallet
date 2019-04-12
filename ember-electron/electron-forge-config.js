@@ -24,7 +24,7 @@ const {
 const icon = path.join(__dirname, 'resources', 'icon');
 
 // const [, name] = packageName.split('/');
-const name = 'BCB-Beta-Wallet';
+const name = 'Bitcoin Black Wallet';
 const categories = linuxDesktopCategories.split(';');
 
 const buildNumber = new Date().toISOString().split('.')[0].replace(/[^\d]/g, '');
